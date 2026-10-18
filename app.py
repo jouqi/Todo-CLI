@@ -1,6 +1,7 @@
 from todo import show_tasks,delete_task,add_task
+from storage import load_tasks,save_tasks
 
-tasks=[]
+tasks=load_tasks()
 while True:
     print("\n==== Todo CLI ====")
     print("1. 查看任务")
@@ -17,4 +18,6 @@ while True:
     elif choice==3:
         delete_task(tasks)
     elif choice==4:
+        save_tasks(tasks)
         break
+
