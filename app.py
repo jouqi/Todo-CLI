@@ -10,10 +10,17 @@ while True:
     print("4. 完成任务")
     print("5. 退出")
 
-    choice=int(input('请选择：').strip())
+    try:
+        choice=int(input('请选择：').strip())
+        if choice>5 or choice<0:
+            print("请输入正确功能号")
+            continue
+    except ValueError as e:
+        print("请输入数字")
+        continue
+
     if choice==1: 
         show_tasks(tasks)
-
     elif choice==2:
         add_task(tasks)
     elif choice==3:
