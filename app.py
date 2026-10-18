@@ -1,7 +1,4 @@
-''' 查看任务
-添加任务
-删除任务
-退出'''
+from todo import show_tasks,delete_task,add_task
 
 tasks=[]
 while True:
@@ -13,20 +10,11 @@ while True:
 
     choice=int(input('请选择：').strip())
     if choice==1: 
-        for i,task in enumerate(tasks,start=1):
-            print(i,task)
+        show_tasks(tasks)
 
     elif choice==2:
-        task=input("请输入任务:").strip()
-        tasks.append(task)
-        print("添加成功")
-
+        add_task(tasks)
     elif choice==3:
-        for i, task in enumerate(tasks,start=1):
-            print(i,task)
-
-        index=int(input("想删除哪个：").strip())
-        tasks.pop(index-1)
-        print("删除成功")
+        delete_task(tasks)
     elif choice==4:
         break
