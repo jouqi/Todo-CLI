@@ -16,5 +16,15 @@ def load_tasks():
         return []
 
 def save_tasks(tasks):
-    with open("my_tasks.json",'w',encoding="UTF-8") as file:
-        json.dump(tasks,file,ensure_ascii=False)
+    temp_path='temp.json'
+    try:
+        with open(temp_path,'w',encoding="UTF-8") as file:
+            json.dump(tasks,file,ensure_ascii=False)
+        os.replace(temp_path,'my_tasks.json')
+        print("数据已保存")
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+    except Exception as e:
+        print(f"保存发生了{e}错误")
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
