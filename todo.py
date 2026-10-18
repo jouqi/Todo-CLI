@@ -11,13 +11,31 @@ def add_task(tasks):
 
 def done_task(tasks):
     show_tasks(tasks)
-    index=int(input("你完成了哪个:").strip())
+    while True:
+        try:
+            index=int(input("你完成了哪个:").strip())
+            if index>len(tasks) or index<1:
+                print("请输入正确任务号")
+                continue
+            break
+        except ValueError as e:
+            print("请输入数字")
+            continue
     tasks[index-1]['done']='True'
     print("设置完成")
 
 
 def delete_task(tasks):
     show_tasks(tasks)
-    index=int(input("想删除哪个:").strip())
+    while True:
+        try:
+            index=int(input("你想删除哪个:").strip())
+            if index>len(tasks) or index<1:
+                print("请输入正确任务号")
+                continue
+            break
+        except ValueError as e:
+            print("请输入数字")
+            continue
     tasks.pop(index-1)
     print("已删除")
