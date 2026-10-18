@@ -12,7 +12,7 @@ while True:
 
     try:
         choice=int(input('请选择：').strip())
-        if choice>5 or choice<0:
+        if choice>5 or choice<1:
             print("请输入正确功能号")
             continue
     except ValueError as e:
@@ -22,7 +22,11 @@ while True:
     if choice==1: 
         show_tasks(tasks)
     elif choice==2:
-        add_task(tasks)
+        while True:
+            task_title=input("请输入要添加的任务：").strip()
+            task_level=input("请输入等级：(high,medium,low)").strip()
+            if add_task(tasks,task_title,task_level):
+                break
     elif choice==3:
         delete_task(tasks)
     elif choice==4:
