@@ -27,5 +27,6 @@ while True:
 
         index=int(input("想删除哪个：").strip())
         tasks.pop(index-1)
+        print("删除成功")
     elif choice==4:
         break
