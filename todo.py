@@ -25,7 +25,7 @@ def add_task(tasks,task_title,task_level):
         return False
 
 def done_task(tasks,index):
-    if index>len(tasks) or index<1:
+    if is_invalid_index(tasks,index):
         print("请输入正确任务号")
         return False
     tasks[index-1]['done']=True
@@ -35,9 +35,15 @@ def done_task(tasks,index):
 
 def delete_task(tasks,index):
     show_tasks(tasks)
-    if index>len(tasks) or index<1:
+    if is_invalid_index(tasks,index):
         print("请输入正确任务号")
         return False
     tasks.pop(index-1)
     print("已删除")
     return True
+
+def is_invalid_index(tasks,index):
+    if index>len(tasks) or index<1:
+        return True
+    else:
+        return False

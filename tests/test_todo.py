@@ -78,14 +78,22 @@ def test_delete_task_invalid_index_too_large():
     tasks = [
         {"title": "学习 Python", "done": False, "priority": "high"}
     ]
+    expected = [
+    {"title": "学习 Python", "done": False, "priority": "high"}
+    ]
     result=delete_task(tasks,2)
     assert tasks!=[]
     assert result is False
+    assert tasks==expected
 
 def test_delete_task_invalid_index_zero():
     tasks = [
         {"title": "学习 Python", "done": False, "priority": "high"}
     ]
+    expected = [
+    {"title": "学习 Python", "done": False, "priority": "high"}
+    ]
     result=delete_task(tasks,0)
     assert tasks!=[]
     assert result is False
+    assert tasks==expected
