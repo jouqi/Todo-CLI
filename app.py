@@ -28,9 +28,24 @@ while True:
             if add_task(tasks,task_title,task_level):
                 break
     elif choice==3:
-        delete_task(tasks)
+        while True:
+            try:
+                index=int(input("你想删除哪个:").strip())
+                if delete_task(tasks,index):
+                    break
+            except ValueError as e:
+                print("请输入数字")
+                continue
     elif choice==4:
-        done_task(tasks)
+        show_tasks(tasks)
+        while True:
+            try:
+                index=int(input("你完成了哪个:").strip())
+                if done_task(tasks,index):
+                    break
+            except ValueError:
+                print("请输入数字")
+                continue
     elif choice==5:
         save_tasks(tasks)
         break
