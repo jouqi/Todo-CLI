@@ -26,13 +26,6 @@ cd Todo-CLI
 ### 2. 创建虚拟环境（推荐）
 
 ```bash
-<<<<<<< HEAD
-python app.py
-
-## 测试
-pip install pytest
-pytest
-=======
 python -m venv .venv
 ```
 
@@ -191,4 +184,3 @@ python -m pytest tests/test_todo.py -q
 3. 使用 pytest 的 `tmp_path` 在临时目录测试正常读写、缺失文件、损坏 JSON 和结构错误，确保不会改动真实任务文件。
 
 以上为下一步建议，当前版本尚未实现。
->>>>>>> pr1
