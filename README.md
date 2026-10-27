@@ -29,3 +29,7 @@ python app.py# Todo CLI
 
 ```bash
 python app.py
+
+## 测试
+pip install pytest
+pytest

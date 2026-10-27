@@ -97,3 +97,15 @@ def test_delete_task_invalid_index_zero():
     assert tasks!=[]
     assert result is False
     assert tasks==expected
+
+
+def test_search_tasks_found():
+    tasks = [
+        {"title": "学习 Python", "done": False, "priority": "high"},
+        {"title": "学习 Git", "done": False, "priority": "medium"},
+    ]
+
+    result = search_tasks(tasks, "Python")
+
+    assert len(result) == 1
+    assert result[0]["title"] == "学习 Python"
